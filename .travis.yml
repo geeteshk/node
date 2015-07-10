@@ -2,6 +2,6 @@ before_script:
   - chmod a+x ndk.sh
   - ./ndk.sh
   - ./android-configure android-ndk-r10e
-  - ls android-toolchain/bin
+  - chmod a+x android-toolchain/bin/python
 
-script: sudo make -qq
+script: make
