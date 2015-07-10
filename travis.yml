@@ -1,0 +1,9 @@
+install: 
+  - sudo apt-get update -qq
+  - sudo apt-get install python python2.7 gcc g++ make -qq
+
+before_script:
+  - ./ndk.sh
+  - ./android-configure android-ndk-r10e
+
+script: make
