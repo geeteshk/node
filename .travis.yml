@@ -6,5 +6,5 @@ install:
 script: 
   - chmod a+x ndk.sh
   - ./ndk.sh
-  - ./android-configure android-ndk-r10e
-  - make
+  - sudo source ./android-configure android-ndk-r10e -qq
+  - sudo make -qq
