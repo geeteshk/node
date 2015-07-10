@@ -1,8 +1,6 @@
 install: 
   - sudo apt-get update -qq
-  - sudo apt-get install python python2.7 gcc g++ make -qq
-
-compiler: gcc
+  - sudo apt-get install python python2.7 build-essential -qq
 
 before_script:
   - chmod a+x ndk.sh
