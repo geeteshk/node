@@ -20,4 +20,4 @@ export LDFLAGS="-fPIE -pie -L$PREFIX/lib"
     --dest-cpu=arm \
     --dest-os=android
 
-ln -s -f android-toolchain/bin/python2 /usr/lib/python2.7
+ln -s -f /usr/lib/python2.7 android-toolchain/bin/python2
