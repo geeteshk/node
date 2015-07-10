@@ -1,10 +1,13 @@
 language: c
+sudo: required
+
+install:
+  - sudo apt-get update -qq
+  - sudo apt-get install ia32-libs
+
 before_script:
   - chmod a+x ndk.sh
   - ./ndk.sh
   - ./android-configure android-ndk-r10e
-  - ls -l android-toolchain/bin/python
-  - ls -l android-toolchain/bin/python2
-  - ls -l android-toolchain/bin/python2.7
   
 script: make
