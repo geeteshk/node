@@ -1,8 +1,3 @@
-language: c
-install: 
-  - sudo apt-get update -qq
-  - sudo apt-get install -qq python python2.7 build-essential
-
 script: 
   - chmod a+x ndk.sh
   - ./ndk.sh
