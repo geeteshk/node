@@ -1,6 +1,10 @@
 Evented I/O for V8 javascript.
 ===
 
+### Current Android Build Status:
+
+[![Build Status](https://travis-ci.org/geeteshk/node.svg?branch=master)](https://travis-ci.org/geeteshk/node)
+
 ### To build:
 
 Prerequisites (Unix only):
