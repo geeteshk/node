@@ -8,10 +8,10 @@ $1/build/tools/make-standalone-toolchain.sh \
     --install-dir=$TOOLCHAIN \
     --platform=android-21
 export PATH=$TOOLCHAIN/bin:$PATH
-export AR=android-toolchain/bin/arm-linux-androideabi-ar
-export CC=android-toolchain/bin/arm-linux-androideabi-gcc
-export CXX=android-toolchain/bin/arm-linux-androideabi-g++
-export LINK=android-toolchain/bin/arm-linux-androideabi-g++
+export AR=/home/travis/build/geeteshk/node/android-toolchain/bin/arm-linux-androideabi-ar
+export CC=/home/travis/build/geeteshk/node/android-toolchain/bin/arm-linux-androideabi-gcc
+export CXX=/home/travis/build/geeteshk/node/android-toolchain/bin/arm-linux-androideabi-g++
+export LINK=/home/travis/build/geeteshk/node/android-toolchain/bin/arm-linux-androideabi-g++
 export CPPFLAGS="-fPIE"
 export LDFLAGS="-fPIE -pie -L$PREFIX/lib"
 
