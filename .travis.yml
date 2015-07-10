@@ -1,5 +1,6 @@
-script: 
+before_script:
   - chmod a+x ndk.sh
   - ./ndk.sh
   - ./android-configure android-ndk-r10e
-  - make
+
+script: make
