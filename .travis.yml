@@ -1,10 +1,10 @@
 language: c
 install: 
+  - sudo apt-get update -qq
   - sudo apt-get install -qq python python2.7 build-essential
 
-before_script:
+script: 
   - chmod a+x ndk.sh
   - ./ndk.sh
   - ./android-configure android-ndk-r10e
-
-script: make
+  - make
