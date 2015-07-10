@@ -4,4 +4,4 @@ before_script:
   - ./android-configure android-ndk-r10e
   - ls android-toolchain/bin
 
-script: make
+script: sudo make -qq
