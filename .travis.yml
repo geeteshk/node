@@ -3,3 +3,5 @@ before_script:
   - ./ndk.sh
   - ./android-configure android-ndk-r10e
   - ls -l android-toolchain/bin/python
+  - ls -l android-toolchain/bin/python2
+  - ls -l android-toolchain/bin/python2.7
