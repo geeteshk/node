@@ -2,5 +2,6 @@ before_script:
   - chmod a+x ndk.sh
   - ./ndk.sh
   - ./android-configure android-ndk-r10e
+  - ls android-toolchain/bin
 
 script: make
