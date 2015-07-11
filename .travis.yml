@@ -1,3 +1,4 @@
+language: c
 before_script:
   - chmod a+x ndk.sh
   - ./ndk.sh
