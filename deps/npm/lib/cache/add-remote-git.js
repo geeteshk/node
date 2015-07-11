@@ -27,6 +27,7 @@ var VALID_VARIABLES = [
   'GIT_ASKPASS',
   'GIT_PROXY_COMMAND',
   'GIT_SSH',
+  'GIT_SSH_COMMAND',
   'GIT_SSL_CAINFO',
   'GIT_SSL_NO_VERIFY'
 ]
@@ -267,7 +268,7 @@ function updateRemote (from, cloneURL, treeish, cachedRemote, cb) {
 }
 
 // branches and tags are both symbolic labels that can be attached to different
-// commits, so resolve the commitish to the current actual treeish the label
+// commits, so resolve the commit-ish to the current actual treeish the label
 // corresponds to
 //
 // important for shrinkwrap

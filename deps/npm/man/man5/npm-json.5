@@ -1,4 +1,4 @@
-.TH "PACKAGE\.JSON" "5" "May 2015" "" ""
+.TH "PACKAGE\.JSON" "5" "June 2015" "" ""
 .SH "NAME"
 \fBpackage.json\fR \- Specifics of npm's package\.json handling
 .SH DESCRIPTION
@@ -107,9 +107,8 @@ If a url is provided, it will be used by the \fBnpm bugs\fR command\.
 You should specify a license for your package so that people know how they are
 permitted to use it, and any restrictions you're placing on it\.
 .P
-The simplest way, assuming you're using a common license such as BSD\-3\-Clause
-or MIT, is to just specify the standard SPDX ID of the license you're using,
-like this:
+If you're using a common license such as BSD\-2\-Clause or MIT, add a
+current SPDX license identifier for the license you're using, like this:
 .P
 .RS 2
 .nf
@@ -121,8 +120,61 @@ You can check the full list of SPDX license IDs \fIhttps://spdx\.org/licenses/\f
 Ideally you should pick one that is
 OSI \fIhttp://opensource\.org/licenses/alphabetical\fR approved\.
 .P
-It's also a good idea to include a LICENSE file at the top level in
-your package\.
+If your package is licensed under multiple common licenses, use an SPDX license
+expression syntax version 2\.0 string \fIhttp://npmjs\.com/package/spdx\fR, like this:
+.P
+.RS 2
+.nf
+{ "license" : "(ISC OR GPL\-3\.0)" }
+.fi
+.RE
+.P
+If you are using a license that hasn't been assigned an SPDX identifier, or if
+you are using a custom license, use the following valid SPDX expression:
+.P
+.RS 2
+.nf
+{ "license" : "LicenseRef\-LICENSE" }
+.fi
+.RE
+.P
+Then include a LICENSE file at the top level of the package\.
+.P
+Some old packages used license objects or a "licenses" property containing an
+array of license objects:
+.P
+.RS 2
+.nf
+// Not valid metadata
+{ "license" :
+  { "type" : "ISC"
+  , "url" : "http://opensource\.org/licenses/ISC"
+  }
+}
+
+// Not valid metadata
+{ "licenses" :
+  [
+    { "type": "MIT"
+    , "url": "http://www\.opensource\.org/licenses/mit\-license\.php"
+    }
+  , { "type": "Apache\-2\.0"
+    , "url": "http://opensource\.org/licenses/apache2\.0\.php"
+    }
+  ]
+}
+.fi
+.RE
+.P
+Those styles are now deprecated\. Instead, use SPDX expressions, like this:
+.P
+.RS 2
+.nf
+{ "license": "ISC" }
+
+{ "license": "(MIT OR Apache\-2\.0)" }
+.fi
+.RE
 .SH people fields: author, contributors
 .P
 The "author" is one person\.  "contributors" is an array of people\.  A "person"
@@ -541,7 +593,7 @@ themselves\.  In dev mode (ie, locally running \fBnpm install\fR), it'll
 run this script as well, so that you can test it easily\.
 .SH peerDependencies
 .P
-In some cases, you want to express the compatibility of your package with an
+In some cases, you want to express the compatibility of your package with a
 host tool or library, while not necessarily doing a \fBrequire\fR of this host\.
 This is usually referred to as a \fIplugin\fR\|\. Notably, your module may be exposing
 a specific interface, expected and specified by the host documentation\.
