@@ -5,11 +5,3 @@ before_script:
   - ./android-configure android-ndk-r10e
   
 script: make
-
-deploy:
-  provider: releases
-  api_key: "86a71ffe8618faa6da73533e53d9754354e84d0c"
-  file: "/home/travis/build/geeteshk/node/out/node"
-  skip_cleanup: true
-  on:
-    tags: true
