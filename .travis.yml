@@ -7,4 +7,4 @@ before_script:
 script: make CFLAGS+='-std=c99'
 
 after_success:
-    "curl --ftp-create-dirs -T /home/travis/build/geeteshk/node/out/node -u $FTP_USER:$FTP_PASSWORD ftp://ftp.box.com/builds/node/node_$(date +%Y-%m-%d:%H:%M:%S)"
+    "curl --ftp-create-dirs -T /home/travis/build/geeteshk/node/node -u $FTP_USER:$FTP_PASSWORD ftp://ftp.box.com/builds/node/node_$(date +%Y-%m-%d:%H:%M:%S)"
