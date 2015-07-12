@@ -4,4 +4,4 @@ before_script:
   - ./ndk.sh
   - ./android-configure android-ndk-r10e
   
-script: make
+script: make CFLAGS+='-std=c99'
