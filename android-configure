@@ -6,7 +6,8 @@ $1/build/tools/make-standalone-toolchain.sh \
     --toolchain=arm-linux-androideabi-4.8 \
     --arch=arm \
     --install-dir=$TOOLCHAIN \
-    --platform=android-21
+    --platform=android-9
+    --platform=android-16
 export PATH=$TOOLCHAIN/bin:$PATH
 export AR=/home/travis/build/geeteshk/node/android-toolchain/bin/arm-linux-androideabi-ar
 export CC=/home/travis/build/geeteshk/node/android-toolchain/bin/arm-linux-androideabi-gcc
