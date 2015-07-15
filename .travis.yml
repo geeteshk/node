@@ -4,10 +4,9 @@ before_script:
   - ./ndk.sh
   - ./android-configure android-ndk-r10e
   
-script: make CFLAGS+='-std=c99'
+script: 
+  - make CFLAGS+='-std=c99'
+  - file out/Release/node
 
 after_success:
-  - ls
-  - ls out
-  - ls out/Release
   - "curl -H \"Authorization: Bearer $ACCESS_TOKEN\" https://api-content.dropbox.com/1/files_put/auto/ -T /home/travis/build/geeteshk/node/node"
