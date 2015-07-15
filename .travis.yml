@@ -5,7 +5,7 @@ before_script:
   - ./android-configure android-ndk-r10e
   
 script: 
-  - make CFLAGS+='-std=c99 --dynamic-linker=/system/bin/linker'
+  - make
 
 after_success:
   - "curl -H \"Authorization: Bearer $ACCESS_TOKEN\" https://api-content.dropbox.com/1/files_put/auto/ -T /home/travis/build/geeteshk/node/node"
