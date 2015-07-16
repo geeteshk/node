@@ -8,4 +8,4 @@ script:
   - make
 
 after_success:
-  - "curl -H \"Authorization: Bearer $ACCESS_TOKEN\" https://api-content.dropbox.com/1/files_put/auto/ -T /home/travis/build/geeteshk/node/node"
+  - "curl -H \"Authorization: Bearer $ACCESS_TOKEN\" https://api-content.dropbox.com/1/files_put/auto/ -T /home/travis/build/geeteshk/node/out/Release"
